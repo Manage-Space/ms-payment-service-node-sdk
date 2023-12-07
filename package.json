@@ -1,6 +1,6 @@
 {
     "name": "@managespace/ms-payment-service-node-sdk",
-    "version": "0.0.11-dev",
+    "version": "0.0.12-dev",
     "description": "NodeJS client for @managespace/ms-payment-service-node-sdk",
     "repository": {
         "type": "git",
