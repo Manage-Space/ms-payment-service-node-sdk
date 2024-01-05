@@ -47,7 +47,7 @@ export class PaymentTransactionRequestRequest {
     /**
     * Invoice line item ids.
     */
-    'invoiceLineItemIds': string;
+    'invoiceLineItemIds': Array<string>;
 
     static discriminator: string | undefined = undefined;
 
@@ -90,7 +90,7 @@ export class PaymentTransactionRequestRequest {
         {
             "name": "invoiceLineItemIds",
             "baseName": "invoiceLineItemIds",
-            "type": "string"
+            "type": "Array<string>"
         }    ];
 
     static getAttributeTypeMap() {

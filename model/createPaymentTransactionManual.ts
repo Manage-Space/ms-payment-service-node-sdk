@@ -21,7 +21,7 @@ export class CreatePaymentTransactionManual {
     /**
     * Invoice line item ids.
     */
-    'invoiceLineItemIds': string;
+    'invoiceLineItemIds': Array<string>;
     'paymentMethod'?: PaymentMethod;
     /**
     * Account ID
@@ -47,7 +47,7 @@ export class CreatePaymentTransactionManual {
         {
             "name": "invoiceLineItemIds",
             "baseName": "invoiceLineItemIds",
-            "type": "string"
+            "type": "Array<string>"
         },
         {
             "name": "paymentMethod",
