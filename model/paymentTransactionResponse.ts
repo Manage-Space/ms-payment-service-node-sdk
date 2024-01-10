@@ -14,6 +14,7 @@ import { RequestFile } from './models';
 import { PaymentTransactionResponsePaymentMethod } from './paymentTransactionResponsePaymentMethod';
 import { PaymentTransactionStatus } from './paymentTransactionStatus';
 import { PaymentTransactionTypeEnum } from './paymentTransactionTypeEnum';
+import { TransactionTypeEnum } from './transactionTypeEnum';
 
 export class PaymentTransactionResponse {
     /**
@@ -54,6 +55,7 @@ export class PaymentTransactionResponse {
     'amount': number;
     'paymentTransactionStatus': PaymentTransactionStatus;
     'paymentTransactionType': PaymentTransactionTypeEnum;
+    'transactionType': TransactionTypeEnum;
     'paymentMethod': PaymentTransactionResponsePaymentMethod | null;
     /**
     * Client secret for use with payment provider.
@@ -63,6 +65,14 @@ export class PaymentTransactionResponse {
     * Created at.
     */
     'createdAt': string;
+    /**
+    * Created by.
+    */
+    'createdBy': string;
+    /**
+    * Invoice ID.
+    */
+    'invoiceId': string;
     /**
     * Created at.
     */
@@ -131,6 +141,11 @@ export class PaymentTransactionResponse {
             "type": "PaymentTransactionTypeEnum"
         },
         {
+            "name": "transactionType",
+            "baseName": "transactionType",
+            "type": "TransactionTypeEnum"
+        },
+        {
             "name": "paymentMethod",
             "baseName": "paymentMethod",
             "type": "PaymentTransactionResponsePaymentMethod"
@@ -143,6 +158,16 @@ export class PaymentTransactionResponse {
         {
             "name": "createdAt",
             "baseName": "createdAt",
+            "type": "string"
+        },
+        {
+            "name": "createdBy",
+            "baseName": "createdBy",
+            "type": "string"
+        },
+        {
+            "name": "invoiceId",
+            "baseName": "invoiceId",
             "type": "string"
         },
         {

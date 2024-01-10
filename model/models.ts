@@ -25,6 +25,7 @@ export * from './paymentTransactionTypeEnum';
 export * from './transactionResponse';
 export * from './transactionStatusCodeNames';
 export * from './transactionStatusResponse';
+export * from './transactionTypeEnum';
 export * from './unauthorizedError401Response';
 export * from './unauthorizedError401ResponseError';
 
@@ -66,6 +67,7 @@ import { PaymentTransactionTypeEnum } from './paymentTransactionTypeEnum';
 import { TransactionResponse } from './transactionResponse';
 import { TransactionStatusCodeNames } from './transactionStatusCodeNames';
 import { TransactionStatusResponse } from './transactionStatusResponse';
+import { TransactionTypeEnum } from './transactionTypeEnum';
 import { UnauthorizedError401Response } from './unauthorizedError401Response';
 import { UnauthorizedError401ResponseError } from './unauthorizedError401ResponseError';
 
@@ -92,6 +94,7 @@ let enumsMap: {[index: string]: any} = {
         "PaymentTransactionStatus": PaymentTransactionStatus,
         "PaymentTransactionTypeEnum": PaymentTransactionTypeEnum,
         "TransactionStatusCodeNames": TransactionStatusCodeNames,
+        "TransactionTypeEnum": TransactionTypeEnum,
 }
 
 let typeMap: {[index: string]: any} = {

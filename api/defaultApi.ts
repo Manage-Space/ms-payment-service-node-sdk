@@ -534,8 +534,9 @@ export class DefaultApi {
      * @param dateFrom 
      * @param dateTo 
      * @param accountId Account Id
+     * @param invoiceId Invoice Id
      */
-    public async getPaymentTransactions (orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: Date, dateTo?: Date, accountId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetPaymentTransactions200Response;  }> {
+    public async getPaymentTransactions (orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: Date, dateTo?: Date, accountId?: string, invoiceId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetPaymentTransactions200Response;  }> {
         const localVarPath = this.basePath + '/payment/orgs/{orgId}/sites/{siteId}/payment-transactions'
             .replace('{' + 'orgId' + '}', encodeURIComponent(String(orgId)))
             .replace('{' + 'siteId' + '}', encodeURIComponent(String(siteId)));
@@ -578,6 +579,10 @@ export class DefaultApi {
 
         if (accountId !== undefined) {
             localVarQueryParameters['accountId'] = ObjectSerializer.serialize(accountId, "string");
+        }
+
+        if (invoiceId !== undefined) {
+            localVarQueryParameters['invoiceId'] = ObjectSerializer.serialize(invoiceId, "string");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
