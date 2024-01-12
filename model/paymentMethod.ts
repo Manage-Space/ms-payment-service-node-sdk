@@ -10,8 +10,6 @@
  * Do not edit the class manually.
  */
 
-// Comment to trigger build
-
 import { RequestFile } from './models';
 
 export class PaymentMethod {
