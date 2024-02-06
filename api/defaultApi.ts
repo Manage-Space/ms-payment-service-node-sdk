@@ -533,10 +533,14 @@ export class DefaultApi {
      * @param limit The maximum number of records to return per page.
      * @param dateFrom 
      * @param dateTo 
-     * @param accountId Account Id
+     * @param fromPrice The price to search from.
+     * @param toPrice The price to search to.
+     * @param accountId Comma-separated list of Account Id\&#39;s
+     * @param paymentTransactionStatus Comma-separated list of statuses (e.g., canceled,processing)
+     * @param paymentTransactionType Comma-separated list of payment methods (e.g., cash,credit_card)
      * @param invoiceId Invoice Id
      */
-    public async getPaymentTransactions (orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: Date, dateTo?: Date, accountId?: string, invoiceId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetPaymentTransactions200Response;  }> {
+    public async getPaymentTransactions (orgId: string, siteId: string, offset?: number, limit?: number, dateFrom?: Date, dateTo?: Date, fromPrice?: number, toPrice?: number, accountId?: string, paymentTransactionStatus?: string, paymentTransactionType?: string, invoiceId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetPaymentTransactions200Response;  }> {
         const localVarPath = this.basePath + '/payment/orgs/{orgId}/sites/{siteId}/payment-transactions'
             .replace('{' + 'orgId' + '}', encodeURIComponent(String(orgId)))
             .replace('{' + 'siteId' + '}', encodeURIComponent(String(siteId)));
@@ -577,8 +581,24 @@ export class DefaultApi {
             localVarQueryParameters['dateTo'] = ObjectSerializer.serialize(dateTo, "Date");
         }
 
+        if (fromPrice !== undefined) {
+            localVarQueryParameters['fromPrice'] = ObjectSerializer.serialize(fromPrice, "number");
+        }
+
+        if (toPrice !== undefined) {
+            localVarQueryParameters['toPrice'] = ObjectSerializer.serialize(toPrice, "number");
+        }
+
         if (accountId !== undefined) {
             localVarQueryParameters['accountId'] = ObjectSerializer.serialize(accountId, "string");
+        }
+
+        if (paymentTransactionStatus !== undefined) {
+            localVarQueryParameters['paymentTransactionStatus'] = ObjectSerializer.serialize(paymentTransactionStatus, "string");
+        }
+
+        if (paymentTransactionType !== undefined) {
+            localVarQueryParameters['paymentTransactionType'] = ObjectSerializer.serialize(paymentTransactionType, "string");
         }
 
         if (invoiceId !== undefined) {
